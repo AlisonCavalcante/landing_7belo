@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestemunhosComponent implements OnInit {
 
+  testemunhos!: any[];
+
   constructor(private testemunhosService: TestemunhosService) { }
 
   ngOnInit(): void {
+    this.testemunhosService.get().subscribe(res => {
+      this.testemunhos = res;
+    })
   }
 
 }

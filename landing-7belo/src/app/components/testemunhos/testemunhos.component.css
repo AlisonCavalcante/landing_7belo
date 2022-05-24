@@ -1,11 +1,26 @@
 .container_title{
   margin: 1rem;
   display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .testemunhos{
   margin: 1rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 .card{
   margin: 1rem;
+}
+.card_testemunhos{
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card_testemunhos:hover{
+  transform: scale(1.2);
+  border-color: #002060;
 }
