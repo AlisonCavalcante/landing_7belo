@@ -1,0 +1,20 @@
+<section>
+  <form [formGroup]="form" class="form container" (ngSubmit)="inscrever()">
+    <h4>Inscreva-se:</h4>
+    <div class="row col-5">
+      <label>Nome:</label>
+      <input formControlName="nome" type="text" />
+    </div>
+    <div class="row col-5">
+      <label>Email:</label>
+      <input formControlName="email" type="text" />
+    </div>
+    <div class="row col-3">
+      <label>Telefone:</label>
+      <input formControlName="telefone" type="tel" />
+    </div>
+    <div>
+      <button [disabled]="!form.valid" type="submit" class="btn btn-success">Inscrever-se</button>
+    </div>
+  </form>
+</section>
