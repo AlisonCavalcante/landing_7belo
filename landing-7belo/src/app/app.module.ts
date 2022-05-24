@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -8,6 +8,7 @@ import { FormInscricaoComponent } from './components/form-inscricao/form-inscric
 import { HeadlineComponent } from './components/headline/headline.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TestemunhosComponent } from './components/testemunhos/testemunhos.component';
+import { AuthorizationInterceptor } from './interceptors/authorization.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { TestemunhosComponent } from './components/testemunhos/testemunhos.compo
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
