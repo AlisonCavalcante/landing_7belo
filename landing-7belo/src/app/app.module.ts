@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TestemunhosComponent } from './components/testemunhos/testemunhos.component';
 import { AuthorizationInterceptor } from './interceptors/authorization.interceptor';
 import { CampoControlErroComponent } from './components/campo-control-erro/campo-control-erro.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CampoControlErroComponent } from './components/campo-control-erro/campo
     HeadlineComponent,
     FooterComponent,
     TestemunhosComponent,
-    CampoControlErroComponent
+    CampoControlErroComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

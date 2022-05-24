@@ -1,3 +1,4 @@
+import { MessagesService } from './../../services/messages.service';
 import { User } from './../../models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,7 +13,7 @@ export class FormInscricaoComponent implements OnInit {
 
   form!: FormGroup;
   user!: User;
-  constructor(private formBuilder: FormBuilder, private userService: UsersService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UsersService, private messageService: MessagesService) { }
 
   ngOnInit(): void {
 
@@ -36,6 +37,7 @@ export class FormInscricaoComponent implements OnInit {
       }
       try {
         this.userService.create(this.user).subscribe(res => {
+          this.messageService.addMessage("Parabéns, você se inscreveu com Sucesso!")
           this.resetForm();
         })
       } catch (error) {
