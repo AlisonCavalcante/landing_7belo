@@ -9,6 +9,7 @@ import { HeadlineComponent } from './components/headline/headline.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TestemunhosComponent } from './components/testemunhos/testemunhos.component';
 import { AuthorizationInterceptor } from './interceptors/authorization.interceptor';
+import { CampoControlErroComponent } from './components/campo-control-erro/campo-control-erro.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AuthorizationInterceptor } from './interceptors/authorization.intercept
     FormInscricaoComponent,
     HeadlineComponent,
     FooterComponent,
-    TestemunhosComponent
+    TestemunhosComponent,
+    CampoControlErroComponent
   ],
   imports: [
     BrowserModule,

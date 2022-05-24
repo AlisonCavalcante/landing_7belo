@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: "Signika", arial, sans-serif;
 }
 .testemunhos{
   margin: 1rem;
@@ -13,14 +14,31 @@
 }
 .card{
   margin: 1rem;
+  border: 2px solid #002060;
 }
 .card_testemunhos{
-  max-width: 200px;
-  height: auto;
+  width: 250px;
+  height: 200px;
   border-radius: 5px;
+}
+.card-title{
+  font-weight: bold;
+}
+.card-body{
+  display: flex;
+  justify-content: flex-start;
+}
+p {
+  max-width: 100ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card_image{
+  width: 20px;
+  height: 20px;
 }
 
 .card_testemunhos:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
   border-color: #002060;
 }

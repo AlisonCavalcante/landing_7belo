@@ -1,15 +1,23 @@
-<section class="container">
-  <div class="card">
-    <div class="row container_title"><h4>Veja os testemunhos dos nossos clientes:</h4></div>
-    <article class="col testemunhos">
-      <div *ngFor="let t of testemunhos | slice:0:4;" class="card card_testemunhos">
-        <div class="card-title">
-          {{t.name}}:
-        </div>
-        <div class="card-body">
-          <p>Testemunho: {{t.body}}</p>
-        </div>
+<section>
+  <div class="container">
+    <div class="card card-container">
+      <div class="row container_title">
+        <h4>Veja os testemunhos dos nossos clientes:</h4>
       </div>
-    </article>
+      <article class="col testemunhos">
+        <div
+          *ngFor="let t of testemunhos | slice: 0:4"
+          class="card card_testemunhos"
+        >
+          <div class="card-header card-title">
+            {{ t.name }}
+            <img class="card_image" src="assets/imgs/aspas.png" alt="Ícone" />
+          </div>
+          <div class="card-body">
+            <p>{{ t.body }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
