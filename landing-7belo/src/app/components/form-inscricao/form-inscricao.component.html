@@ -1,20 +1,49 @@
-<section>
-  <form [formGroup]="form" class="form container" (ngSubmit)="inscrever()">
-    <h4>Inscreva-se:</h4>
-    <div class="row col-5">
-      <label>Nome:</label>
-      <input formControlName="nome" type="text" />
-    </div>
-    <div class="row col-5">
-      <label>Email:</label>
-      <input formControlName="email" type="text" />
-    </div>
-    <div class="row col-3">
-      <label>Telefone:</label>
-      <input formControlName="telefone" type="tel" />
-    </div>
-    <div>
-      <button [disabled]="!form.valid" type="submit" class="btn btn-success">Inscrever-se</button>
+<section class="c">
+  <form [formGroup]="form" class="form container" (ngSubmit)="cadastrar()">
+    <div class="card">
+      <div class="card-title"><h4>Inscreva-se:</h4></div>
+      <div class="row col-5">
+        <label>Nome:</label>
+        <input class="form-control" formControlName="name" type="text" />
+      </div>
+      <div class="row col-5">
+        <label>Email:</label>
+        <input
+          class="form-control"
+          placeholder="algumacoisa@email.com"
+          formControlName="email"
+          type="text"
+        />
+      </div>
+      <div><label for="genero" class="control-label">Genêro:</label></div>
+      <div class="form-check form-check-inline">
+        <input
+          formControlName="gender"
+          class="form-check-input"
+          type="radio"
+          value="male"
+          name="gender"
+          id="gender"
+        />
+        <label class="form-check-label" for="gender"> Masculino </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          formControlName="gender"
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          value="female"
+          id="gender"
+          checked
+        />
+        <label class="form-check-label" for="gender"> Feminino </label>
+      </div>
+      <div>
+        <button [disabled]="!form.valid" type="submit" class="btn btn-success">
+          Inscrever-se
+        </button>
+      </div>
     </div>
   </form>
 </section>

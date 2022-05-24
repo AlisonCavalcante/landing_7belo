@@ -1,0 +1,10 @@
+.headline{
+  background-color: #002060;
+  opacity: 0.8;
+  height: 80px;
+}
+.hedline_title{
+  color: white;
+  padding: 2%;
+  font-family: "Signika", arial, sans-serif;
+}

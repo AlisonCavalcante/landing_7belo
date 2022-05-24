@@ -1,0 +1,11 @@
+.container_title{
+  margin: 1rem;
+  display: flex;
+}
+.testemunhos{
+  margin: 1rem;
+  display: flex;
+}
+.card{
+  margin: 1rem;
+}

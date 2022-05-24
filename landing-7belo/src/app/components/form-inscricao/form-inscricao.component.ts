@@ -11,7 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class FormInscricaoComponent implements OnInit {
 
   form!: FormGroup;
-
+  user!: User;
   constructor(private formBuilder: FormBuilder, private userService: UsersService) { }
 
   ngOnInit(): void {
@@ -21,17 +21,31 @@ export class FormInscricaoComponent implements OnInit {
 
   initForm(){
     this.form = this.formBuilder.group({
-      nome: [null, Validators.required],
+      name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      telefone: [null, Validators.required],
+      gender: ['male']
     })
   }
 
-  inscrever(){
-    // console.log("entrando")
-      this.userService.create(this.form.value).subscribe(res => {
-        console.log(res);
-      })
+  cadastrar(){
+       this.user = {
+        name: this.form.get('name')?.value,
+        email: this.form.get('email')?.value,
+        gender: this.form.get('gender')?.value,
+        status: "active"
+      }
+      try {
+        this.userService.create(this.user).subscribe(res => {
+          this.resetForm();
+        })
+      } catch (error) {
+        alert("Erro ao cadastrar" + error);
+      }
+
+  }
+
+  resetForm(){
+    this.form.reset();
   }
 
 }
