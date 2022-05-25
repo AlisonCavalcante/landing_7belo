@@ -1,44 +1,57 @@
-.container_title{
+.container_title {
   margin: 1rem;
   display: flex;
   justify-content: center;
   text-align: center;
   font-family: "Signika", arial, sans-serif;
 }
-.testemunhos{
+.testemunhos {
   margin: 1rem;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
 }
-.card{
+.card {
   margin: 1rem;
-  border: 2px solid #002060;
+  border: 5px solid #002060;
 }
-.card_testemunhos{
+.card_testemunhos {
   width: 250px;
   height: 200px;
   border-radius: 5px;
 }
-.card-title{
+.card-title {
   font-weight: bold;
+  background-color: #ffddd6;
 }
-.card-body{
+.card-form_title{
+  text-align: center;
+}
+.card-body {
   display: flex;
   justify-content: flex-start;
 }
+.btn {
+  background-color: #002060;
+  margin: 10px;
+}
+.card-footer {
+  text-align: center;
+}
+
 p {
   max-width: 100ch;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card_image{
+.card_image {
   width: 20px;
   height: 20px;
 }
 
-.card_testemunhos:hover{
+.card_testemunhos:hover {
   transform: scale(1.1);
   border-color: #002060;
 }

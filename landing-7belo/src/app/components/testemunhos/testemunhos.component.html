@@ -4,7 +4,7 @@
       <div class="row container_title">
         <h4>Veja os testemunhos dos nossos clientes:</h4>
       </div>
-      <article class="col testemunhos">
+      <article class="testemunhos">
         <div
           *ngFor="let t of testemunhos | slice: 0:4"
           class="card card_testemunhos"
@@ -18,6 +18,46 @@
           </div>
         </div>
       </article>
+    </div>
+    <!--Form Comentar -->
+    <div class="card">
+      <form [formGroup]="form" (submit)="coment()">
+        <div class="row card-body">
+          <div class="card-form_title"><h4>Faça seu comentário ou sugestão:</h4></div>
+          <div class="col-6" >
+            <label>Nome:</label>
+          <input class="form-control" formControlName="name" type="text" />
+          <app-campo-control-erro
+            *ngIf="form.get('name')?.errors?.['required'] && form.get('name')?.touched"
+            msgErro="Nome é Obrigatório"
+          ></app-campo-control-erro>
+          </div>
+          <div class="row col-6">
+            <label>Email:</label>
+            <input
+              class="form-control"
+              placeholder="algumacoisa@email.com"
+              formControlName="email"
+              type="text"
+            />
+            <app-campo-control-erro
+              *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched"
+              msgErro="E-mail é Obrigatório"
+            ></app-campo-control-erro>
+            <app-campo-control-erro
+            *ngIf="form.get('email')?.errors?.['email'] && form.get('email')?.touched"
+            ></app-campo-control-erro>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comente</label>
+            <textarea class="form-control" formControlName="body" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button [disabled]="!form.valid" type="submit" class="btn btn-success">Comentar</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </section>

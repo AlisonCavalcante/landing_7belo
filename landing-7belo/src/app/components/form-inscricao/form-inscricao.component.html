@@ -2,7 +2,7 @@
   <form [formGroup]="form" class="form container" (ngSubmit)="cadastrar()">
     <div class="card">
       <div class="card-title"><h4>Inscreva-se:</h4></div>
-      <div class="row col-5">
+      <div class="row">
         <label>Nome:</label>
         <input class="form-control" formControlName="name" type="text" />
         <app-campo-control-erro
@@ -10,7 +10,7 @@
           msgErro="Nome é Obrigatório"
         ></app-campo-control-erro>
       </div>
-      <div class="row col-5">
+      <div class="row">
         <label>Email:</label>
         <input
           class="form-control"
@@ -52,7 +52,7 @@
           <label class="form-check-label" for="gender"> Feminino </label>
         </div>
       </div>
-      <div>
+      <div class="card-footer">
         <button [disabled]="!form.valid" type="submit" class="btn btn-success">
           Inscrever-se
         </button>
