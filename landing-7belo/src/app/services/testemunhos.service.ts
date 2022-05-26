@@ -37,7 +37,9 @@ export class TestemunhosService {
     return this.httpClient.post<Coment>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}/comments`, testemunho);
   }
   createPost(post: any, idUser: string | undefined): Observable<any>{
-    return this.httpClient.post<any>(Constantes.URL_BASE + Constantes.URL_POSTS + `/${idUser}/posts`, post);
+    return this.httpClient.post<any>(Constantes.URL_BASE + Constantes.URL_POSTS + `/${idUser}/posts`, post).pipe(
+      take(1)
+    );
   }
   get(idPost: string): Observable<any>{
     return this.httpClient.get<any>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}/comments`).pipe(

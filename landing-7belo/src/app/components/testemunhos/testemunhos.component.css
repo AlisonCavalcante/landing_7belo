@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: "Signika", arial, sans-serif;
 }
 .testemunhos {
   margin: 1rem;
@@ -25,7 +24,7 @@
 .card_testemunhos {
   width: 200px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.4s;
 }
 .card-title {

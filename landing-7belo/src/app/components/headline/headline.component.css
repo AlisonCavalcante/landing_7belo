@@ -1,44 +1,63 @@
-.headline{
+.headline {
   background-color: #002060;
-  color: #FFDDD6;
+  color: #ffddd6;
   opacity: 0.8;
   height: 80px;
   margin-bottom: 5%;
   width: auto;
   height: auto;
 }
-.headline_incial{
-  border-bottom: 5px dashed #FFDDD6;
+.headline_incial {
+  border-bottom: 5px dashed #ffddd6;
   margin-bottom: 2%;
 }
-.logo{
+.logo {
   width: 200px;
 }
-.hedline_title{
-  color: #FFDDD6;
+.hedline_title {
+  -webkit-text-stroke: 1px #ffddd6;
+  color: white;
   width: 100%;
   padding: 2%;
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.beneficios{
+.beneficios, .caracteriticas {
   align-items: center;
   padding: 10px;
-  border: 1px solid #FFDDD6;
+  border: 1px solid #ffddd6;
   border-radius: 10px;
   margin-bottom: 1%;
+  padding: 30px;
 }
-.beneficios_title{
+.beneficios_title, .caracteristicas_title {
   text-align: center;
+  font-size: 1.6rem;
 }
-.beneficios-list{
+.beneficios-list, .caracteristicas_list {
   list-style-type: square;
-  color: #FFDDD6;
+  color: #ffddd6;
+  font-size: 1.5rem;
 }
 .imagem {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 150;
-  height: 150;
+}
+.imagem img {
+  width: 350px;
+  height: auto;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.imagem h2 {
+  font-size: 4rem;
+  -webkit-text-stroke: 2px #ffddd6;
+  color: white;
+}
+
+
+.imagem img:hover {
+  width: 450px;
+  height: auto;
+  transform: scale(1.1);
 }

@@ -64,10 +64,11 @@ export class TestemunhosComponent implements OnInit {
           )
         )
         .subscribe(() => {
+
+          });
           this.testemunhosService.get(this.idPost).subscribe((res) => {
             this.testemunhos = res;
             console.log(this.testemunhos);
-          });
         });
     });
   }
