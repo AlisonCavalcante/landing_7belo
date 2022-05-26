@@ -9,14 +9,38 @@ import { Coment } from '../models/coment.model';
 })
 export class TestemunhosService {
 
+  comentario: Coment[] = [
+    {
+      name: 'Alison',
+      email: 'alison@gmail.com',
+      body: 'São as melhores',
+    },
+    {
+      name: 'Ayrton',
+      email: 'ayrton@gmail.com',
+      body: 'Muito boas',
+    },
+    {
+      name: 'clara',
+      email: 'clara@gmail.com',
+      body: 'Não fico sem!',
+    },
+    {
+      name: 'aline',
+      email: 'aline@gmail.com',
+      body: 'Sou viciada!',
+    },
+  ];
   constructor(private httpClient: HttpClient) { }
 
-  create(testemunho: Coment): Observable<Coment>{
-    return this.httpClient.post<Coment>(Constantes.URL_BASE + Constantes.URL_COMENTS, testemunho);
+  create(testemunho: Coment, idPost: string): Observable<Coment>{
+    return this.httpClient.post<Coment>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}` + '/comments', testemunho);
   }
-
-  get(): Observable<any>{
-    return this.httpClient.get<any>(Constantes.URL_BASE + Constantes.URL_COMENTS).pipe(
+  createPost(post: any): Observable<any>{
+    return this.httpClient.post<any>(Constantes.URL_BASE + Constantes.URL_POSTS, post);
+  }
+  get(idPost: string): Observable<any>{
+    return this.httpClient.get<any>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}` + '/comments').pipe(
       take(1)
     )
   }

@@ -7,47 +7,60 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-form-inscricao',
   templateUrl: './form-inscricao.component.html',
-  styleUrls: ['./form-inscricao.component.css']
+  styleUrls: ['./form-inscricao.component.css'],
 })
 export class FormInscricaoComponent implements OnInit {
-
   form!: FormGroup;
   user!: User;
-  constructor(private formBuilder: FormBuilder, private userService: UsersService, private messageService: MessagesService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UsersService,
+    private messageService: MessagesService
+  ) {}
 
   ngOnInit(): void {
-
     this.initForm();
   }
 
-  initForm(){
+  initForm() {
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      gender: ['male']
-    })
+      gender: ['male'],
+    });
   }
 
-  cadastrar(){
-       this.user = {
-        name: this.form.get('name')?.value,
-        email: this.form.get('email')?.value,
-        gender: this.form.get('gender')?.value,
-        status: "active"
-      }
-      try {
-        this.userService.create(this.user).subscribe(res => {
-          this.messageService.addMessage("Parabéns, você se inscreveu com Sucesso!")
+  cadastrar() {
+    this.user = {
+      name: this.form.get('name')?.value,
+      email: this.form.get('email')?.value,
+      gender: this.form.get('gender')?.value,
+      status: 'active',
+    };
+    try {
+      this.userService.create(this.user).subscribe(
+        (res) => {
+          this.messageService.addMessage(
+            'Parabéns, você se inscreveu com Sucesso!'
+          );
           this.resetForm();
-        })
-      } catch (error) {
-        alert("Erro ao cadastrar" + error);
-      }
-
+        },
+        (erro) => {
+          if (erro.error[0].field === 'email') {
+            this.messageService.addMessage(
+              'Email já cadastrado, insira outro por favor!'
+            );
+            this.resetForm();
+          }
+        }
+      );
+    } catch (error) {
+      console.log('error');
+      alert('Erro ao cadastrar' + error);
+    }
   }
 
-  resetForm(){
+  resetForm() {
     this.form.reset();
   }
-
 }
