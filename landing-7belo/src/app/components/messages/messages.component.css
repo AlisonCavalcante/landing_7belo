@@ -7,24 +7,40 @@
   z-index: 10;
   background-color: white;
   border: 3px solid #002060;
-  padding: 1.5em;
-  display: flex;
+  /* padding: 1.5em; */
+  /* display: flex; */
   flex-direction: column;
 }
 
-.message_header{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+.message_header {
+  background-color: #002060;
+  opacity: 0.8;
+  padding: 10px;
+  /* display: flex;
+  justify-content: space-between; */
+  /* margin-bottom: 1rem; */
 }
 
-.message_header button{
+.message_header button {
   cursor: pointer;
   background-color: #002060;
   color: white;
   padding: 0.5rem;
 }
-
+.message_body {
+  background-color: #ffddd6;
+  margin: 0;
+  padding: 20px;
+}
 .message_body p {
   font-size: 1.2em;
+  margin: 0;
+
 }
+
+ /* @media only screen and(min-width: 400) {
+  .message_header{
+    background-color: #ffddd6;
+    font-size: 5px;
+  }
+} */
