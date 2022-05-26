@@ -34,13 +34,13 @@ export class TestemunhosService {
   constructor(private httpClient: HttpClient) { }
 
   create(testemunho: Coment, idPost: string): Observable<Coment>{
-    return this.httpClient.post<Coment>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}` + '/comments', testemunho);
+    return this.httpClient.post<Coment>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}/comments`, testemunho);
   }
-  createPost(post: any): Observable<any>{
-    return this.httpClient.post<any>(Constantes.URL_BASE + Constantes.URL_POSTS, post);
+  createPost(post: any, idUser: string | undefined): Observable<any>{
+    return this.httpClient.post<any>(Constantes.URL_BASE + Constantes.URL_POSTS + `/${idUser}/posts`, post);
   }
   get(idPost: string): Observable<any>{
-    return this.httpClient.get<any>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}` + '/comments').pipe(
+    return this.httpClient.get<any>(Constantes.URL_BASE + Constantes.URL_COMENTS + `${idPost}/comments`).pipe(
       take(1)
     )
   }
