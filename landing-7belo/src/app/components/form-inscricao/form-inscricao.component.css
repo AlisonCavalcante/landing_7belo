@@ -1,16 +1,28 @@
 .card{
   border: 5px solid #002060;
+  border-radius: 20px;
+}
+.card-header{
+  background-color: #002060;
+  opacity: 0.8;
+  color: #ffddd6;
+}
+.card-body{
+  padding: 10px;
 }
 .card-title{
   text-align: center;
 }
 .card-footer{
   text-align: center;
+  background-color: #002060;
+  opacity: 0.8;
 }
 .form div {
  margin: 10px 5%;
 }
 .btn {
-  background-color: #002060;
+  background-color: #ffddd6;
+  color: #002060;
   margin: 10px;
 }

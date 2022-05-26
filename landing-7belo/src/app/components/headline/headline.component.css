@@ -1,11 +1,44 @@
 .headline{
   background-color: #002060;
+  color: #FFDDD6;
   opacity: 0.8;
   height: 80px;
+  margin-bottom: 5%;
+  width: auto;
+  height: auto;
+}
+.headline_incial{
+  border-bottom: 5px dashed #FFDDD6;
+  margin-bottom: 2%;
+}
+.logo{
+  width: 200px;
 }
 .hedline_title{
-  color: white;
+  color: #FFDDD6;
   width: 100%;
   padding: 2%;
-  font-family: "Signika", arial, sans-serif;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.beneficios{
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #FFDDD6;
+  border-radius: 10px;
+  margin-bottom: 1%;
+}
+.beneficios_title{
+  text-align: center;
+}
+.beneficios-list{
+  list-style-type: square;
+  color: #FFDDD6;
+}
+.imagem {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 150;
+  height: 150;
 }

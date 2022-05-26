@@ -1,14 +1,19 @@
 .page {
-  background-color: #FFDDD6;
+  background-color: #ffddd6;
+  font-family: "Signika", arial, sans-serif;
 }
-.promo{
+.promo {
   text-align: center;
   background-color: #002060;
-  color: #FFDDD6;
+  opacity: 0.8;
+  color: #ffddd6;
   border: 3px dashed #002060;
   border-radius: 5px;
   margin-top: 10px;
 }
-.title{
+.container{
+  margin-bottom: 3%;
+}
+.title {
   text-align: center;
 }
