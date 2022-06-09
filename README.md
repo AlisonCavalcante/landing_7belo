@@ -19,7 +19,7 @@ https://gorest.co.in POST /public/v2/users.
 # Tecnologias:
 - Angular CLI 13.1.0
 - Bootstrap 5.1.3
-- Node.js 16.3.1
+
 
 # Como Instalar:
 - Baixe ou clone o este repositório usando git clone 
